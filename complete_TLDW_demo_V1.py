@@ -42,7 +42,7 @@ def load_audio_video_context(input_video_csv, input_audio_csv):
     detected_text = detected_text + " the following are the input video's frame-wise captions annotated with respect to video timestamps in seconds : \n"
 
     linecount = 0
-    with open(input_video_csv, newline='') as csvfile:
+    with open(input_video_csv, newline='', encoding='unicode_escape') as csvfile:
         spamreader = csv.reader(csvfile)
         for row in spamreader:
             #print(row)
@@ -55,7 +55,7 @@ def load_audio_video_context(input_video_csv, input_audio_csv):
     detected_text = detected_text + "\n Now, the following are the input video's audio (speech-to-text) trasncriptions generated with respect to video timestamps in seconds : \n \n"
 
     linecount_1 = 0
-    with open(input_audio_csv, newline='') as csvfile_1:
+    with open(input_audio_csv, newline='', encoding='unicode_escape') as csvfile_1:
         spamreader_1 = csv.reader(csvfile_1)
         for row_1 in spamreader_1:
             if linecount_1 != 0:

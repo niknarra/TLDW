@@ -38,8 +38,8 @@ if 'messages' not in st.session_state:
     
 
 def load_audio_video_context(input_video_csv, input_audio_csv):
-    detected_text = "Your task is to go through the below provided time-stamped video and audio context of a video. Correlate between the above provided audio and video context while answering the questions. Don't explicitly mention that you are basing your responses on the context while asnwering the questions, try asnwering the questions in a normal tone." + "\n \n"
-    detected_text = detected_text + " the following are the input video's frame-wise captions annotated with respect to video timestamps in seconds : \n"
+    detected_text = "Your task is to go through the below provided time-stamped video and audio context of a video. Correlate between the provided audio and video context while answering the questions. Don't explicitly mention that you are basing your responses on the context while asnwering the questions, try asnwering the questions in a normal tone." + "\n \n"
+    detected_text = detected_text + " the following are the input video's frame-wise captions generated with respect to video timestamps in seconds : \n"
 
     linecount = 0
     with open(input_video_csv, newline='', encoding='unicode_escape') as csvfile:
@@ -52,7 +52,7 @@ def load_audio_video_context(input_video_csv, input_audio_csv):
             linecount = linecount + 1
 
 
-    detected_text = detected_text + "\n Now, the following are the input video's audio (speech-to-text) trasncriptions generated with respect to video timestamps in seconds : \n \n"
+    detected_text = detected_text + "\n Now, the following are the video's audio trasncriptions generated with respect to video timestamps in seconds : \n \n"
 
     linecount_1 = 0
     with open(input_audio_csv, newline='', encoding='unicode_escape') as csvfile_1:
@@ -64,7 +64,7 @@ def load_audio_video_context(input_video_csv, input_audio_csv):
                     detected_text = detected_text + row_1[1] + ' to ' + row_1[2] + ' seconds audio trasncription is : ' + row_1[3] + '\n'
             linecount_1 = linecount_1 +1
 
-    detected_text = detected_text + "\n \n " + "Your task is to go through the below provided time-stamped video and audio context of a video. Correlate between the above provided audio and video context while answering the questions. Don't explicitly mention that you are basing your responses on the context while asnwering the questions, try asnwering the questions in a normal tone. If the question is not relevant to the context provided, try to generalize your answer, try asnwering the questions as much as possible " + "\n"
+    detected_text = detected_text + "\n \n " + "If the question is not relevant to the context provided, try to generalize your answer, try asnwering the questions as much as possible. Based on the provided instructions, now asnwer the questions accordingly: " + "\n"
     
     return detected_text
     

@@ -8,7 +8,7 @@ The proposed ‘TL;DW’ application integrates video and audio processing capab
 Through the application's interactive user interface, users can engage with the fine-tuned large language model to ask questions related to the video content. To reduce cognitive load for users, the interface provides options to review previous conversations with the system.
 The core AI techniques powering the video summarization and question answering capabilities are video-frame captioning, audio transcription, and key-frame extraction. By leveraging state-of-the-art large language models, the system can effectively analyze long temporal context from the video and generate abstractive summaries and meaningful insights. This allows for an interactive conversation with the video content rather than passive watching.
 The proposed TL;DW application enables generating concise summaries by extracting key frames, captioning them, and transcribing audio to build a rich contextual database for each video. This context is processed by the large language model to produce succinct summarizations. The conversational interface allows users to efficiently interact with the video content by asking questions and accessing insights from the video context, without needing to watch the full video.
-![TL;DW Low Level Design] (https://github.com/niknarra/TLDW/blob/main/TLDW%20pipeline.png)
+![TL;DW Low Level Design] [https://github.com/niknarra/TLDW/blob/main/TLDW%20pipeline.png]
 [Project Live Demo](https://tldwapp.streamlit.app/)
 
 ## Running the code in your local environment:

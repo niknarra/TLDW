@@ -52,7 +52,7 @@ def load_audio_video_context(input_video_csv, input_audio_csv):
             linecount = linecount + 1
 
 
-    detected_text = detected_text + "\n Now, the following are the video's audio trasncriptions generated with respect to video timestamps in seconds : \n \n"
+    detected_text = detected_text + "\n \n \n Now, the following are the video's audio trasncriptions generated with respect to video timestamps in seconds : \n \n"
 
     linecount_1 = 0
     with open(input_audio_csv, newline='', encoding='unicode_escape') as csvfile_1:
@@ -64,7 +64,7 @@ def load_audio_video_context(input_video_csv, input_audio_csv):
                     detected_text = detected_text + row_1[1] + ' to ' + row_1[2] + ' seconds audio trasncription is : ' + row_1[3] + '\n'
             linecount_1 = linecount_1 +1
 
-    detected_text = detected_text + "\n \n " + "If the question is not relevant to the context provided, try to generalize your answer, try asnwering the questions as much as possible. Based on the provided instructions, now asnwer the questions accordingly: " + "\n"
+    detected_text = detected_text + "\n \n \n" + " If the question is not relevant to the context provided, try to generalize your answer, try asnwering the questions as much as possible. Based on the provided instructions, now asnwer the questions accordingly: " + "\n"
     
     return detected_text
     

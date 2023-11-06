@@ -38,7 +38,7 @@ if 'messages' not in st.session_state:
     
 
 def load_audio_video_context(input_video_csv, input_audio_csv):
-    detected_text = "Assume you are an answer writing expert bot. Your task is to go through the below provided time-stamped video and audio context of a video. PLease try to correlate between the above provided audio and video context while answering the questions. Please dont say based on the context while asnwering the questions, try asnwering the questions as much as possible " + "\n \n"
+    detected_text = "Your task is to go through the below provided time-stamped video and audio context of a video. Correlate between the above provided audio and video context while answering the questions. Don't explicitly mention that you are basing your responses on the context while asnwering the questions, try asnwering the questions in a normal tone." + "\n \n"
     detected_text = detected_text + " the following are the input video's frame-wise captions annotated with respect to video timestamps in seconds : \n"
 
     linecount = 0
@@ -64,10 +64,10 @@ def load_audio_video_context(input_video_csv, input_audio_csv):
                     detected_text = detected_text + row_1[1] + ' to ' + row_1[2] + ' seconds audio trasncription is : ' + row_1[3] + '\n'
             linecount_1 = linecount_1 +1
 
-    detected_text = detected_text + "\n \n " + "Assume you are an answer writing expert bot. Your task is to go through the above time-stamped video and audio context of a video. Extract relevant information from it, and answer the questions that will follow. PLease try to correlate between the above provided audio and video context while answering the questions. If the question is not relevant to the context provided, try to generalize your answer relevant to the above provided video and audio context, please dont say based on the context while asnwering the questions, try asnwering the questions as much as possible " + "\n"
+    detected_text = detected_text + "\n \n " + "Your task is to go through the below provided time-stamped video and audio context of a video. Correlate between the above provided audio and video context while answering the questions. Don't explicitly mention that you are basing your responses on the context while asnwering the questions, try asnwering the questions in a normal tone. If the question is not relevant to the context provided, try to generalize your answer, try asnwering the questions as much as possible " + "\n"
     
     return detected_text
-
+    
 def load_chathistory(chathistory_csv):
     return_list = []
     temp_linecount = 0

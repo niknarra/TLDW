@@ -17,7 +17,7 @@ The proposed TL;DW application enables generating concise summaries by extractin
 * Install the dependecies using ``` pip install -r requirements.txt ```
 * Once the dependecies are insstalled, run ```streamlit run .\complete_TLDW_demo_V1.py```
 
-```python
+#### The following is the description of the main python code ```complete_TLDW_demo_V1.py```
 1. `streamlit`: This is the main framework used for building the web app. It provides functions to create interactive widgets and to manage the app's state.
 
 2. `langchain` library components:
@@ -48,4 +48,57 @@ The `@st.cache_data` decorator likely caches the loaded data to improve performa
 The app's state management is done through Streamlit's session state (`st.session_state`), holding the generated responses, past inputs, and messages. This state persists across reruns of the app, allowing for a continuous chat experience.
 
 The app provides an interface for users to interact with a video by asking questions, which are then answered by the chatbot using the loaded context. It is designed to handle video playback, display video metadata, and manage the interaction between the user and the system.
+
+
+Pseudo Code of the main functionality:
+```python
+INITIALIZE empty list chat_history
+SET temp_str to empty string
+IMPORT streamlit as st
+IMPORT necessary modules from langchain (FAISS, ChatOpenAI, OpenAIEmbeddings, RecursiveCharacterTextSplitter, RetrievalQA, ConversationalRetrievalChain)
+IMPORT os, csv, pandas as pd
+IMPORT message from streamlit_chat
+
+DEFINE function load_audio_video_context(input_video_csv, input_audio_csv)
+    INITIALIZE detected_text with instructions for the bot
+    READ video CSV file and APPEND frame-wise captions to detected_text
+    READ audio CSV file and APPEND speech-to-text transcriptions to detected_text
+    RETURN detected_text
+
+DEFINE function load_chathistory(chathistory_csv)
+    READ chathistory_csv and RETURN chat history list
+
+DEFINE function populate_chat_history(inp_csv_file)
+    READ inp_csv_file and APPEND chat history to session state
+
+SET Streamlit page configuration
+SET environment variable for OpenAI API key
+
+CREATE text_splitter instance with specified chunk size and overlap
+
+INITIALIZE Streamlit session state variables for 'generated', 'past', and 'messages' if not present
+
+DEFINE function load_data()
+    READ CSV and RETURN as pandas DataFrame
+
+DEFINE function display_main_page()
+    DISPLAY title and subheader in Streamlit
+    ALLOW selection of video category
+    FILTER videos based on selected category
+    DISPLAY video thumbnails and names, and handle video selection
+
+DEFINE function display_video_page()
+    HANDLE navigation back to main page
+    LOAD and DISPLAY selected video details
+    SET up chat functionality with input and response containers
+    IF user submits input and page is not main:
+        LOAD chat history from CSV
+        GENERATE response using conversational retrieval chain
+        APPEND messages to session state
+        WRITE new chat history to CSV
+
+IF selected page in session state is 'main'
+    CALL display_main_page()
+ELSE
+    CALL display_video_page()
 ```

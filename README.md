@@ -12,11 +12,40 @@ The proposed TL;DW application enables generating concise summaries by extractin
 [Project Live Demo](https://tldwapp.streamlit.app/)
 
 ## Running the code in your local environment:
-## Dependency Installation
+#### Dependency Installation
 * Make sure you have Python > 3.9
 * Install the dependecies using ``` pip install -r requirements.txt ```
 * Once the dependecies are insstalled, run ```streamlit run .\complete_TLDW_demo_V1.py```
 
 ```python
+1. `streamlit`: This is the main framework used for building the web app. It provides functions to create interactive widgets and to manage the app's state.
 
+2. `langchain` library components:
+   - `FAISS`: Utilized for efficient similarity search and retrieval of vectors.
+   - `ChatOpenAI`: Interface for the OpenAI chat model, likely used for generating responses.
+   - `OpenAIEmbeddings`: To convert text into embeddings using OpenAI's model.
+   - `RecursiveCharacterTextSplitter`: To split long texts into smaller chunks suitable for processing.
+   - `RetrievalQA`, `ConversationalRetrievalChain`: Components for building a retrieval-based QA system where the chatbot retrieves information to answer questions.
+
+3. `os`: To interact with the operating system, for example, setting an environment variable for the OpenAI API key.
+
+4. `csv`: To read and write CSV files, which in this context are used to store chat histories and video/audio metadata.
+
+5. `pandas`: For handling data in a tabular form, here used to load video data.
+
+6. `streamlit_chat`: To add chat functionality to the Streamlit app.
+
+The code includes several functions:
+- `load_audio_video_context()`: This function reads CSV files containing video frame captions and audio transcriptions, then concatenates them into a single text, preparing it as context for the chatbot.
+- `load_chathistory()`: Reads a CSV file containing a chat history and returns it as a list.
+- `populate_chat_history()`: Appends chat history from a CSV file into the Streamlit session state.
+- `load_data()`: Loads video data from a CSV file into a pandas DataFrame.
+- `display_main_page()`: Renders the main page of the app, which includes video selection.
+- `display_video_page()`: Shows selected video details and provides an interface for chat interaction.
+
+The `@st.cache_data` decorator likely caches the loaded data to improve performance, and `st.set_page_config(layout="wide")` sets the layout of the Streamlit page to wide mode. The environment variable for the `OPENAI_API_KEY` is set, which is necessary for authentication with OpenAI's API.
+
+The app's state management is done through Streamlit's session state (`st.session_state`), holding the generated responses, past inputs, and messages. This state persists across reruns of the app, allowing for a continuous chat experience.
+
+The app provides an interface for users to interact with a video by asking questions, which are then answered by the chatbot using the loaded context. It is designed to handle video playback, display video metadata, and manage the interaction between the user and the system.
 ```

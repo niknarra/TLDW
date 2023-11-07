@@ -101,6 +101,22 @@ def load_data():
 
 df = load_data()
 
+def stick_it_good():
+    # make header sticky.
+    st.markdown(
+        """
+            <div class='fixed-header'/>
+            <style>
+                div[data-testid="column"] div:has(div.fixed-header) {
+                    overflow-y: scroll;
+                    height: 650px;
+                }
+            </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+
 # Function to display the main page
 def display_main_page():
     st.title("TL;DW")
@@ -141,7 +157,7 @@ def display_video_page():
         vector_index = FAISS.load_local("index_store_new_"+str(video['id']), OpenAIEmbeddings())
         retriever = vector_index.as_retriever(search_type="similarity", search_kwargs={"k": 6})
         conv_interface = ConversationalRetrievalChain.from_llm(ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0), retriever=retriever)
-    col1, col2 = st.columns([3, 5])
+    col1, col2 = st.columns([2, 3])
     with col1:
         st.title(video['video_name'])
         st.video(video['video_file'])
@@ -156,6 +172,7 @@ def display_video_page():
         response_container = st.container()
         # container for text box
         container = st.container()
+        stick_it_good()
         with container:
             with st.form(key='my_form', clear_on_submit=True):
                 user_input = st.text_area("Input your prompt here:", key='input', height=100)

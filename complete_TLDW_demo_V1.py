@@ -119,27 +119,28 @@ def stick_it_good():
 
 # Function to display the main page
 def display_main_page():
-    st.title("TL;DW")
-    st.subheader("Video Repository")
-    category = st.selectbox("Select a category", ["All"] + list(df['category'].unique()))
+    st.title("TL;DW: Capturing the Core of Content")
+    #st.subheader("Video Repository")
+    category = st.selectbox("Categories", ["All"] + list(df['category'].unique()))
     filtered_videos = df if category == "All" else df[df['category'] == category]
     
     # Using thumbnails for video selection
     cols = st.columns(3)  # Adjust based on desired grid size
     for index, row in filtered_videos.iterrows():
         col = cols[index % 3]
-        if col.button('select', key=row['id']):
+        col.image(str(row['thumbnail']), use_column_width=True, caption=row['video_name'])
+        if col.button('Select', key=row['id']):
             st.session_state.selected_video = row
             st.session_state.page = 'video'
             video = st.session_state.selected_video
             populate_chat_history(video['chat_history'])
             st.experimental_rerun()
         print(row['thumbnail'])
-        col.image(str(row['thumbnail']), use_column_width=True, caption=row['video_name'])
+        
 
 # Function to display the video details and playback page
 def display_video_page():
-    if st.button("Back to Main Page"):
+    if st.button("Home"):
         st.session_state.page = 'main'
         st.session_state['generated'] = []
         st.session_state['past'] = []
@@ -166,7 +167,7 @@ def display_video_page():
         st.write('**Description:**', video['description'])
     with col2:
         
-        st.subheader("Interact with the video here")
+        st.subheader("Chat")
         # You can add chat functionality here.
         # As an example, let's create a simple chat box.
         response_container = st.container()
@@ -175,7 +176,7 @@ def display_video_page():
         stick_it_good()
         with container:
             with st.form(key='my_form', clear_on_submit=True):
-                user_input = st.text_area("Input your prompt here:", key='input', height=100)
+                user_input = st.text_area("Ask any question !", key='input', height=100)
                 submit_button = st.form_submit_button(label='Send')
                 st.session_state['messages'].append({"role": "user", "content": user_input})
         

@@ -5,3 +5,4 @@ streamlit_chat==0.1.1
 openai==0.28.1
 tiktoken==0.5.1
 faiss-cpu==1.7.4
+streamlit-authenticator==0.2.3

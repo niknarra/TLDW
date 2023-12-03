@@ -234,7 +234,7 @@ def display_video_page():
                     index = i * cols + j
                     if index < len(numbers):
                         # Create a button with the number
-                        cols_list[j].button(str(convert_seconds_to_hms(int(numbers[index]))), on_click=click_button, args=(int(numbers[index]),))
+                        cols_list[j].button(str(int(numbers[index])), on_click=click_button, args=(int(numbers[index]),))
                     else:
                         # Create an empty space
                         cols_list[j].empty()

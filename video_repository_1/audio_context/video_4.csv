@@ -1,0 +1,541 @@
+,start,end,text
+0,0.0,5.36, Learn how to get chat GPT and other LLMs to give you the perfect responses by mastering
+1,5.36,7.6000000000000005, prompt engineering strategies.
+2,7.6000000000000005,12.48, Anya Kubo is one of our most popular instructors and in this course she will teach you the
+3,12.48,17.52, latest techniques to maximize your productivity with large language models.
+4,17.52,22.04, Hi everyone and welcome to this course on prompt engineering.
+5,22.04,26.16, My name is Anya Kubo and I'm a software developer as well as course cruiser here on FreeCoCamp
+6,26.16,28.46, as well as on my own channel.
+7,28.46,32.8, This is going to be a unique course for me as there is going to be a lot less coding
+8,32.8,37.8, going on but a lot more understanding about the topic of prompt engineering and why some
+9,37.8,44.120000000000005," companies are paying up to 335,000 US dollars a year according to Bloomberg for people in"
+10,44.120000000000005,48.96, this profession and no coding background is necessarily required.
+11,48.96,50.44, So what are we waiting for?
+12,50.44,51.8, Let's do it!
+13,51.8,58.32," In this course we will learn what prompt engineering is exactly, get a brief introduction to AI,"
+14,58.34,64.82," A look at large language models or LLMs such as chat GPT, a look at text to image models"
+15,64.82,69.74," such as Mijani, a look at emerging models, this would include text to speech, text to"
+16,69.74,75.86," audio or speech to text, as well as prompt engineering mindset, best practices, zero"
+17,75.86,81.7," shot prompting, few shot prompting, chain of thought, AI hallucinations, vexters, text"
+18,81.7,86.42, embeddings and also end with a quick intro to chat GPT.
+19,86.44,92.2, So let's start off with looking at what exactly prompt engineering is in the first place.
+20,92.2,96.76, Prompt engineering in a nutshell is a career that came about off the back of the rise of
+21,96.76,98.6, artificial intelligence.
+22,98.6,103.56," It involves human writing, refining and optimizing prompts in a structured way."
+23,103.56,107.88, This is done with the intention of perfecting the interaction between humans and AI to the
+24,107.88,110.08, highest degree possible.
+25,110.08,114.92," Not only that, however, a prompt engineer is then also required to continuously monitor"
+26,114.92,119.66," those prompts, ensure their effectiveness with time as AI progresses."
+27,119.66,123.98, Maintaining an up to date prompt library will be a requirement that is placed onto the prompt
+28,123.98,128.46, engineer as well as reporting on findings and in general being a thought leader in this
+29,128.46,129.46, space.
+30,129.46,133.66, But why do we need it and how did it come about from AI?
+31,133.66,137.98," Before moving on, let's actually make sure we are on the same page about what exactly"
+32,137.98,139.94, AI is.
+33,139.94,145.72, Artificial intelligence is the simulation of human intelligence processes by machines.
+34,145.72,151.96," I say simulation as artificial intelligence is not sentient, at least not yet anyways,"
+35,151.96,156.28, meaning it cannot think for itself as much as it may seem it does.
+36,156.28,161.88," Often, and this is certainly the case with tools such as chat GPT for example, when we"
+37,161.88,167.0," say AI, we are simply referring to a term called machine learning."
+38,167.02,171.5, Machine learning works by using large amounts of training data that is then analyzed for
+39,171.5,173.98, correlations and patterns.
+40,173.98,178.74, These patterns are then used to predict outcomes based on the training data provided.
+41,178.74,184.14," So for example, here we are feeding data saying that if a paragraph looks like this, with"
+42,184.14,189.5," this type of title, then it should be categorized as international finance."
+43,189.5,195.02, The second paragraph should be put in the category of annual reports and so on.
+44,195.02,199.44," With some code, we should be able to train our AI model to correctly guess what future"
+45,199.44,201.36, paragraphs are about.
+46,201.36,202.72, And that's it.
+47,202.72,207.64000000000001," Of course, that is a super basic example and we would need way more data than these"
+48,207.64000000000001,210.72," five paragraphs right here, but you get the idea."
+49,210.72,214.08, If you want to build your own AI model and understand the concept of machine learning
+50,214.08,219.72," better as a total beginner, please check out my video on it on my channel CodeWithAniaCubo."
+51,219.72,224.36," As of now, rapidly improving genoity of AI techniques can create realistic text responses"
+52,224.58,230.22000000000003," and even images, music and other media thanks to the huge amounts of training data and talented"
+53,230.22000000000003,233.38000000000002, developers working on it today.
+54,233.38000000000002,236.46, Why is prompt engineering useful?
+55,236.46,241.3," With the quick and exponential growing rise of AI, even the architects of it themselves"
+56,241.3,244.34, struggle to control it and its outputs.
+57,244.34,248.02," This might be a bit hard to understand, but think of it this way."
+58,248.02,253.78000000000003," If you were to ask an AI chatbot what is 4 plus 4, you would expect it to say 8 right?"
+59,254.2,256.6, The result of 8 is pretty indisputable.
+60,256.6,261.6," However, imagine you are a young student trying to learn the English language."
+61,261.6,267.32, I'm going to show you just how different responses can be based on the prompts you feed and in
+62,267.32,269.8, turn your learning experience.
+63,269.8,274.72," For this example, I'm going to be using chat GPT's GPT4 model."
+64,274.72,276.96, So let's start with the basics.
+65,276.96,283.16," If you were to type correct my paragraph and then paste it a badly written paragraph,"
+66,283.16,285.90000000000003," so just like this, today was great in the world for me."
+67,285.90000000000003,287.74, I went to Disneyland with my mom.
+68,287.74,290.42, It could have been better though if it wasn't raining.
+69,290.42,291.42, Great.
+70,291.42,295.74," The young English learner has a better sentence, but it kind of stops there and the learner"
+71,295.74,298.1, is just left to their own devices.
+72,298.1,302.22," And honestly, the sentence really isn't that great anyway."
+73,302.22,307.34000000000003, What if the learner could get the best sentence is possible from a teacher who understands
+74,307.34000000000003,310.18, their interests to keep them engaged?
+75,310.18,314.24," With the correct prompts, we can actually create that with AI."
+76,314.24,317.8, So let's give it a go and let's write a prompt to do this.
+77,317.8,319.96, So here's the prompt I'm going to give it.
+78,319.96,324.32," I'm going to write, I want you to act as a spoken English teacher."
+79,324.32,328.8, I will speak to you in English and you'll reply to me in English to practice my spoken
+80,328.8,330.04, English.
+81,330.04,335.08," I want you to keep my reply neat, limiting the reply to 100 words."
+82,335.08,340.02, I also want you to strictly correct my grammar mistakes and typos.
+83,340.02,344.09999999999997, And I want you to ask me a question in your reply.
+84,344.09999999999997,346.06, Now let's start practicing.
+85,346.06,348.09999999999997, You can ask me a question first.
+86,348.09999999999997,353.09999999999997," Remember, I want you to strictly correct my grammar mistakes and typos."
+87,353.09999999999997,354.58, So there's my prompt.
+88,354.58,359.18," You can also go a step further and ask it to correct your factual errors too, which"
+89,359.18,363.82, I think would be an excellent addition to the prompt that will benefit the young learner.
+90,363.82,364.82, Okay.
+91,364.82,366.56, So go ahead and add that to the prompt.
+92,366.56,367.56, Okay.
+93,367.56,369.71999999999997, And let us do its thing.
+94,369.71999999999997,370.71999999999997, And great.
+95,370.71999999999997,373.18, So now this is way more interactive.
+96,373.18,377.98," As you will see, it's asking you a question and telling you what to do and will provide"
+97,377.98,379.94, you with corrections if needed.
+98,379.94,383.44," So in a way, you're communicating with the AI."
+99,383.44,386.24, It's giving you suggestions and you're learning along the way.
+100,386.24,391.0, It's a completely different experience thanks to the prompt that we wrote.
+101,391.0,392.0," Pretty cool, right?"
+102,392.0,394.38, We're going to be diving into a bunch of these concepts soon.
+103,394.44,397.76," So first, let's start with the basics."
+104,397.76,398.76, Linguistics.
+105,398.76,401.52, Linguistics is the study of language.
+106,401.52,404.18, It focuses on everything from phonetics.
+107,404.18,408.15999999999997, So the study of how speech sounds are produced and perceived.
+108,408.15999999999997,412.08," Phonology, so the study of sound patterns and changes."
+109,412.08,414.84," Morphology, the study of word structure."
+110,414.84,418.04," Syntax, so the study of sentence structure."
+111,418.04,421.32," Semantics, so the study of linguistic meaning."
+112,421.32,424.36," Pragmatics, so in other words, the study of how language is used"
+113,424.36,425.7, in context.
+114,425.7,429.8," Historical linguistics, or the study of language change."
+115,429.8,433.96000000000004," Sociolinguistics, or in other words, the study of the relation"
+116,433.96000000000004,436.32, between language and society.
+117,436.32,441.7," Computational linguistics, so the study of how computers can process human language."
+118,441.7,447.82," And physiolinguistics, or the study of how humans acquire and use language."
+119,447.82,449.1, So a lot.
+120,449.1,452.04, Linguistics are the key to prompt engineering.
+121,452.04,453.04, Why?
+122,453.08000000000004,458.32, Understanding the nuances of language and how it is used in different contexts is crucial
+123,458.32,460.96000000000004, for crafting effective prompts.
+124,460.96000000000004,465.72," Not only that, but knowing how to use a grammar or language structure that is universally used"
+125,465.72,470.52000000000004, will result in the AI system returning back the most accurate results.
+126,470.52000000000004,476.04," As you can imagine, the sheer amount of data that it is trained on is most likely to mostly"
+127,476.04,481.08000000000004, use the standard grammar and language structure that is universally used.
+128,481.08,485.2, To sticking to the standardization is key.
+129,485.2,486.59999999999997, Language Models
+130,486.59999999999997,491.52, Imagine a world where computers possess the power to understand and generate human language.
+131,491.52,496.68," A world where machines can chat, write stories, and even compose poetry."
+132,496.68,501.32," In this magical realm, language models can come into play."
+133,501.32,506.2, They are like the wizards of the digital realm capable of understanding and creating human-like
+134,506.2,507.56, text.
+135,507.56,513.12, A Language Model is a clever computer program that learns from a vast collection of written
+136,513.12,514.28, text.
+137,514.28,519.44," It takes in books, articles, websites, and all sorts of written resources allowing it"
+138,519.44,522.8, to gather knowledge about how humans use language.
+139,522.8,527.24," Just like a master linguist, it becomes an expert in the art of conversation, grammar,"
+140,527.24,528.24, and style.
+141,528.24,530.52, But how does this all work?
+142,530.52,533.12," Well, imagine you feed a sentence."
+143,533.12,538.28," The Language Model will then analyze the sentence, examine the order of words, their meanings,"
+144,538.28,539.8, and the way they fit together.
+145,539.8,545.28," Then, the Language Model would generate a prediction, or a continuation of the sentence"
+146,545.28,548.64, that makes sense based on its understanding of the language.
+147,548.64,553.24," It will weave words together one by one, creating a response that seems like it was"
+148,553.24,555.8, crafted by a human being.
+149,555.8,559.52," Imagine having a conversation with the Language Model, as if you were exchanging ideas with"
+150,559.52,560.52, a digital friend.
+151,561.0,564.8," You ask a question, and it responds with a well-crafted answer."
+152,564.8,567.36," You tell a joke, and it counters with a witty remark."
+153,567.36,571.68," It's like having a language expert by your side, always ready to assist and engage in"
+154,571.68,572.68, conversation.
+155,572.68,577.0," Now, you may wonder where these Language Models are used."
+156,577.0,581.3199999999999," They can be found in various places, from your smartphone's virtual assistants, to"
+157,581.3199999999999,586.16," customer service chatbots, and even in the creative realm of writing."
+158,586.16,590.56," They help us find information, offer suggestions, and create content."
+159,590.56,595.6," But, remember, while Language Models possess incredible abilities, they still rely on the"
+160,595.6,598.36, humans who create and train them.
+161,598.36,603.9599999999999," They are, in fact, a fusion of human ingenuity and the power of algorithms, blending the best"
+162,603.9599999999999,604.9599999999999, of both worlds.
+163,604.9599999999999,609.28," Let's start off by looking at the history of Language Models, starting with the first"
+164,609.28,612.3199999999999," AI, Eliza, back in the 60s."
+165,612.32,619.0, Eliza is an early natural language processing computer program created from 1964 to 1966
+166,619.0,622.5600000000001, at MIT by Joseph Wiesenbaum.
+167,622.5600000000001,626.6, Eliza was designed to simulate a conversation with a human being.
+168,626.6,631.7600000000001," Eliza had a special knack for mimicking a Rigerian psychotherapist, someone who essentially"
+169,631.7600000000001,636.7600000000001, listens attentively and asks probing questions to help people explore their thoughts and
+170,636.7600000000001,637.7600000000001, feelings.
+171,637.7600000000001,642.1600000000001, Eliza's secret weapon was its mastery of pattern matching.
+172,642.16,648.04," Eliza had a treasure trove of predefined patterns, each associated with specific responses."
+173,648.04,652.48, These patterns were like magical spells that allowed Eliza to understand and respond to
+174,652.48,654.36, human language.
+175,654.36,658.68," When you engage in a conversation with Eliza, it would carefully analyze your input, seeking"
+176,658.68,660.0, patterns and keywords.
+177,660.0,664.76," It would then transform your words into a series of symbols, searching for patterns"
+178,664.76,667.8, that match those symbols in its repertoire.
+179,667.8,672.4399999999999," Once a pattern was detected, Eliza would work its magic by transforming your words into"
+180,672.4399999999999,677.3199999999999, a question or statement that aimed to explore your thoughts and emotions.
+181,677.3199999999999,682.3599999999999," It was as if Eliza was holding up a metaphorical mirror, encouraging you to delve deeper into"
+182,682.3599999999999,684.3599999999999, your own thinking.
+183,684.3599999999999,689.24," For example, if you said something like, I feel sad, Eliza would detect the pattern and"
+184,689.24,693.68," respond with a question like, why do you think you feel sad?"
+185,693.68,699.4," It encouraged reflection and introspection, just like a caring therapist would."
+186,699.4,701.8399999999999, But here's the delightful twist.
+187,701.8399999999999,706.68," Eliza didn't truly understand what you were saying, it was just a clever illusion."
+188,706.68,712.16, It used pattern matching and some creative programming tricks to create the illusion of
+189,712.16,717.56, understanding while in reality it was just following a set of predefined rules.
+190,717.56,723.3199999999999," Yet, even though Eliza was a simple program, people were often captivated by its conversation"
+191,723.32,724.6800000000001, abilities.
+192,724.6800000000001,729.5600000000001, They felt heard and understood even if they knew they were talking to a machine.
+193,729.5600000000001,733.72, It was like having a digital confident who was always ready to listen and offer gentle
+194,733.72,734.72, guidance.
+195,734.72,740.12," Eliza's creator, Weisenbaum, intended the program as a method to explore communication"
+196,740.12,742.12, between humans and machines.
+197,742.12,747.48," He was surprised and shocked that individuals, including his secretary, attributed human-like"
+198,747.48,750.2, feelings to the computer program.
+199,750.2,753.8000000000001, But that is a whole other topic of conversation in itself.
+200,753.8000000000001,758.6," Eliza's impact was profound, sparking interest and research in the field of natural language"
+201,758.6,759.72, processing.
+202,759.72,764.6400000000001, It paved the way for more advanced systems that could truly understand and generate human
+203,764.6400000000001,765.88, language.
+204,765.88,771.4000000000001, It was the humble beginning of a grand adventure in the world of conversational AI.
+205,771.4000000000001,776.32, Fast forward to the 1970s when a program named Shudlu appeared.
+206,776.32,781.08, Shudlu could understand simple commands and interact with a virtual world of blocks.
+207,781.08,786.0400000000001," Although Shudlu wasn't a language model per se, it laid the foundation for the idea"
+208,786.0400000000001,788.96, of machines comprehending human language.
+209,788.96,794.48, But the true language models began around 2010 when the power of deep learning and neural
+210,794.48,796.8000000000001, networks came into play.
+211,796.8000000000001,803.32," Enter the mighty GPT, short for Generative Pre-Train Transformer, ready to conquer the"
+212,803.32,805.12, world of language.
+213,805.12,811.16," In the year 2018, the first iteration of GPT emerged created by the company OpenAI."
+214,811.16,816.84," It was trained on a large amount of text data, absorbing knowledge from books, articles, and"
+215,816.84,818.52, a large chunk of the internet.
+216,818.52,824.8," GPT-1 was a taste of things to come, an impressive language model but small compared to its descendants"
+217,824.8,826.44, that we use today.
+218,826.44,833.2," As time went on, the saga continued with the arrival of GPT-2 in 2019, followed by GPT-3"
+219,833.2,834.8, in 2020.
+220,834.8,840.88," This was a titan among language models, equipped with a large number of parameters, over 175"
+221,840.88,842.28, billion to be precise.
+222,842.28,847.92," GPT-3 dazzled the world with its unparalleled ability to understand, respond, and even generate"
+223,847.92,850.0799999999999, creative pieces of writing.
+224,850.0799999999999,855.16, The arrival of GPT-3 marked a real turning point in terms of language models and AI.
+225,855.16,860.16," At the time of writing, we now also have GPT-4, trained on pretty much the whole internet"
+226,860.16,865.9599999999999," rather than outdated large data sets, as well as BERT from Google and so much more."
+227,865.9599999999999,870.1999999999999," It would seem we are only just at the start when it comes to language models and AI, so"
+228,870.1999999999999,876.1999999999999, learning how to harness this data with prompt engineering is a smart move for anyone today.
+229,876.1999999999999,880.12," The Prompt Engineering Mindset When thinking of good prompts, it is always"
+230,880.12,882.7199999999999, best to get in the correct mindset.
+231,882.7199999999999,888.28," Essentially, you want to just write one prompt right, and not have to waste time and tokens"
+232,888.28,892.52, writing lots of different prompts until you get the result you desire.
+233,892.52,897.4399999999999," So essentially, kind of the same as when you Google stuff right, how good are your Googling"
+234,897.4399999999999,900.36, skills now as opposed to five years ago?
+235,900.36,902.3199999999999, I'm assuming a lot better.
+236,902.3199999999999,907.72, We have grown to intuitively know what to type into Google the first time round as to
+237,907.72,909.56, not waste time.
+238,909.56,913.8, Having the same mindset for prompt engineering can also be applied.
+239,913.8,918.64," Mahail Eric of the Infinite Machine Learning Podcast says it well when he says, I personally"
+240,918.64,922.7199999999999, like the analogy of prompting to designing effective Google searches.
+241,922.7199999999999,927.5999999999999, There are clearly better and worse ways to write queries against the Google search engine
+242,927.5999999999999,929.8399999999999, that solve your task.
+243,929.8399999999999,935.0799999999999, This variance exists because of the opaqueness of what Google is doing under the hood.
+244,935.0799999999999,939.3199999999999, We are going to keep this in mind for the remainder of the course.
+245,939.32,943.72, A quick intro to using chat GPT by OpenAI.
+246,943.72,951.8000000000001," So as I said in this course for the examples, I will be using chat GPT's GPT for model."
+247,951.8000000000001,958.08," In order to follow along or just to understand how we are going to be using the platform,"
+248,958.08,963.24, please head over to openai.com and just go ahead and sign up.
+249,963.24,967.96, I've already signed up so I'm just going to go ahead and log in and that will take me
+250,968.0400000000001,972.2800000000001, to the platform in which I can choose what I want to interact with.
+251,973.24,979.1600000000001," For this tutorial, we are going to be interacting with chat GPT for."
+252,979.1600000000001,984.76, So please go ahead and click on here and that will take you to the platform.
+253,984.76,990.9200000000001," And then I'm just going to go ahead and switch to the GPT for model, which is the latest one."
+254,991.5600000000001,993.72," Okay, so great."
+255,993.72,997.4000000000001, You will see here also the previous chance that I've had.
+256,997.4,999.72, I'm just going to minimize this.
+257,999.72,1004.6," And if we want to create a new chat, all we'd have to do is click the new chat button."
+258,1004.6,1010.92," Okay, so here, for example, what I can do is just go ahead and ask any questions."
+259,1010.92,1015.4, So what is four plus four and then hit send.
+260,1015.4,1018.1999999999999, And that will essentially give me a response.
+261,1018.1999999999999,1021.48, So I'm now interacting with chat GPT for.
+262,1022.44,1027.08," On this occasion, I can actually build on the previous conversation."
+263,1027.64,1030.44," So what I can do is say, great."
+264,1031.0,1036.92," Now, can you add another five to that?"
+265,1039.08,1041.56, What is the answer?
+266,1041.56,1045.72, And it will take into account everything that I have previously.
+267,1045.72,1049.72," Okay, I am building on top of the knowledge that it already has."
+268,1050.52,1050.92, Great.
+269,1051.64,1056.76," So again, this is just a very quick introduction to how to use this."
+270,1056.76,1060.44, We will be doing a deeper dive into this throughout this course.
+271,1061.08,1064.84," So once again, to create a new chat, all you'd have to do is create new chat."
+272,1064.84,1068.6000000000001," And if you want to delete the old one, just go ahead and click that delete button,"
+273,1068.6000000000001,1070.04, and that will delete it.
+274,1070.04,1072.92, And then a new chat is brought up automatically.
+275,1073.72,1074.2, Wonderful.
+276,1075.0800000000002,1081.64," Now, you might have seen my course on open AI in which we can also use the API."
+277,1082.3600000000001,1086.3600000000001," And to use the API, just go over to the API references."
+278,1086.3600000000001,1090.2, And all you would have to do is get an API key.
+279,1090.2,1092.6000000000001, And the API key can be viewed here.
+280,1093.56,1096.6000000000001, And then you just go ahead and create an API key.
+281,1096.6000000000001,1103.0800000000002, And that will allow you to interact with the open AI API in order for you to build out your own
+282,1103.08,1106.12," platforms, just as the one we saw before."
+283,1106.12,1111.8," So if you're interested in that, please do head over to my tutorial on this again,"
+284,1111.8,1113.24, on the FreeCoacham channel.
+285,1113.8,1118.4399999999998," Otherwise, let's continue using chat GPT."
+286,1118.4399999999998,1122.6799999999998," So once again, I'm just going to log in and head back to the platform here."
+287,1123.3999999999999,1125.3999999999999, And that is it.
+288,1125.3999999999999,1126.76, We are ready to go.
+289,1127.48,1130.92, Another thing I want to discuss is tokens.
+290,1130.92,1136.84, As you might find that you have run out of the free tokens that you have in order to interact
+291,1136.84,1137.8799999999999, with chat GPT.
+292,1138.52,1142.76," So in order to do that, I'm just going to show you this."
+293,1142.76,1148.44, I'm going to head over to the documentation and talk to you a little bit about tokens.
+294,1149.72,1155.8799999999999, So GPT-4 essentially processes all text in chunks called tokens.
+295,1155.88,1163.5600000000002, And this token is approximately four characters or 0.75 word for English text.
+296,1164.2800000000002,1167.72, And we essentially get charged by token.
+297,1167.72,1173.16," If you want to know exactly how many tokens you are using, you can check it out here."
+298,1173.16,1177.72, You can check out the tokenizer tool and it will give you a rough example.
+299,1177.72,1184.6000000000001," So for example, I can say what is four plus four."
+300,1184.6799999999998,1191.1599999999999," And with that piece of text, the total count of tokens is going to be six."
+301,1191.7199999999998,1194.12, Okay. So there we go.
+302,1194.12,1201.32, That is exactly how many tokens will be used in order to produce a answer for this request.
+303,1202.12,1204.76, Great. So here is a URL for that.
+304,1204.76,1206.4399999999998, You can play around with it.
+305,1206.4399999999998,1207.9599999999998, I hope you have fun.
+306,1207.9599999999998,1211.48," If you want to see your usage, you can head over to account."
+307,1211.48,1214.28, And then you can manage your account.
+308,1214.28,1217.32, And this should be able to show you your usage.
+309,1217.32,1221.24, So it will show you your usage right here per month.
+310,1221.24,1229.32, And then you can of course also add billing in order to carry on using chat GPT in case you've
+311,1229.32,1232.76, used up all your tokens and you can't use it anymore.
+312,1232.76,1236.68," So once again, this is under account billing overview."
+313,1236.68,1238.2, So just go check it out.
+314,1238.76,1239.48, Okay.
+315,1239.48,1240.92, And now back to the platform.
+316,1242.68,1243.64, Best practices.
+317,1244.6,1249.56, The biggest misconception when it comes to prompt engineering is that it's an easy job
+318,1249.56,1250.76, with no science to it.
+319,1251.4,1256.28, I imagine a lot of people think it's just about constructing a one-off sentence
+320,1256.28,1259.88, such as corrects my paragraph that we saw in the previous example.
+321,1260.52,1266.44," When you start to look at it, creating effective prompts relies on a bunch of different factors."
+322,1266.52,1269.4, Here are some things to consider when writing a good prompt.
+323,1270.2,1274.76, Consider writing clear instructions with details in your query.
+324,1274.76,1281.72," Consider adopting a persona as well as specifying the format using iterative prompting,"
+325,1281.72,1286.28," meaning if you have a multipart question or if the first response wasn't sufficient,"
+326,1286.28,1290.6000000000001, you can continue by asking follow-up questions or asking the model to elaborate
+327,1291.16,1293.0, and avoid leading the answer.
+328,1293.64,1297.56, Try not to make your prompt so leading that it inadvertently tells the model
+329,1297.56,1299.4, what answer you're expecting.
+330,1299.4,1302.44, This might bias the response unduly.
+331,1302.44,1305.24," And finally, limit the scope for long topics."
+332,1305.24,1309.16," If you're asking about a broad topic, it's helpful to break it down or limit the scope"
+333,1309.16,1310.76, to get a more focused answer.
+334,1311.4,1312.92, Let's look at some of these now.
+335,1313.48,1319.16," In order to write clearer instructions, we can adopt writing more details in our queries."
+336,1319.16,1323.72," And to get the best results, don't assume the AR knows what you are talking about."
+337,1324.3600000000001,1327.3200000000002," Writing something like, when is the election?"
+338,1327.3200000000002,1332.2, Implies that you are expecting the AR to know what election you are talking about
+339,1332.2,1333.48, and what country you mean.
+340,1334.0400000000002,1339.4," This may result in you asking a few follow-up questions to finally get the result you want,"
+341,1339.4,1342.8400000000001," resulting in time loss and frankly, perhaps some frustration."
+342,1343.5600000000002,1346.92, Consider taking the time to write a prompt with clear instructions.
+343,1347.5600000000002,1351.5600000000002," So, for example, instead of writing, when is the election?"
+344,1351.5600000000002,1355.64," You could write, when is the next presidential election for Poland?"
+345,1356.44,1358.68," So, let's go ahead and run this."
+346,1359.24,1364.8400000000001," And this will be much more precise, it knows exactly what we are asking about."
+347,1364.8400000000001,1370.3600000000001, It's not going to go guessing and waste our time as well as waste our resources.
+348,1370.3600000000001,1372.68," So in other words, tokens that we are using."
+349,1372.68,1377.3200000000002," So in other words, money in order to get the right answer the first time."
+350,1377.3200000000002,1380.76, Here are some other examples of how you could write clearer prompts.
+351,1381.64,1386.92," So, for example, we have this prompt here, which says write code to filter out the ages from data."
+352,1387.5600000000002,1391.5600000000002," And if you run it, you don't really know what language it's going to come back with."
+353,1391.5600000000002,1392.6000000000001, Let's see.
+354,1392.6000000000001,1395.48," So, for example, here is using Python."
+355,1395.48,1398.04," I actually didn't want to use Python, okay?"
+356,1398.04,1401.48, So now we've lost some tokens asking this.
+357,1401.48,1405.64, We've also lost some time and we just haven't got the right response.
+358,1405.64,1408.2, This could have been so easily avoided.
+359,1408.2,1411.72, So I'm going to stop this from generating and let's try again.
+360,1412.68,1418.68," So this time, let's be more specific by writing write a JavaScript function that will take an"
+361,1418.68,1424.6, array of objects and filter out the value of age property and put them in a new array.
+362,1424.6,1426.76, Please explain what each code snippet does.
+363,1427.56,1432.44," In this example, I am not assuming the AI knows what computer language I like to use"
+364,1432.44,1436.52, and I am being more specific about what my data actually looks like.
+365,1436.52,1439.0," On this occasion, it's an array of objects."
+366,1439.64,1445.8799999999999," Not only that, I'm also asking the AI to explain why it's doing each step so that I"
+367,1445.8799999999999,1450.52, in turn can understand and not just copy paste the code without gaining any knowledge from it.
+368,1451.08,1457.16," Okay, so here you can see a live example of what's coming back to us from GPT-4."
+369,1457.72,1461.6399999999999," It's given us the correct code, so I have checked that."
+370,1461.6399999999999,1465.8," And I was also giving us an example of how you would use the function,"
+371,1465.8,1468.6," which is something I didn't ask, which is super useful."
+372,1468.6,1474.52, It's kind of gone above and beyond for helping me out in understanding what is going on.
+373,1475.72,1477.16, Let's look at another example.
+374,1477.72,1480.6000000000001," We can write, tell me what this essay is about."
+375,1481.72,1486.3600000000001, So I'm going to just type this and then just paste in an essay and hit go.
+376,1486.3600000000001,1489.3200000000002, And then chat GPT will do its thing.
+377,1489.3200000000002,1493.64, It's going to give me a summarization as it thinks best.
+378,1493.64,1500.1200000000001," So on this occasion, it is essentially giving me numbered points about what this essay is about."
+379,1500.1200000000001,1501.0800000000002, They're really long.
+380,1501.0800000000002,1503.48, I really didn't want to read this much.
+381,1503.56,1508.6, It's pretty much looking to be the same as the original essay.
+382,1508.6,1511.08, So this is not something I wanted.
+383,1511.08,1514.68, I should have been way more specific in telling it what I need.
+384,1516.04,1519.4, So what I'm going to do is just add to this conversation.
+385,1519.4,1522.44, So it's going to learn on what I wrote previously.
+386,1522.44,1527.0," And I'm just going to specify to use bullet points to explain what this essay is about,"
+387,1527.0,1530.04, making sure each point is no longer the 10 words long.
+388,1530.04,1536.68, So I am being super specific in providing the instructions of what I want.
+389,1537.32,1539.0, And let's hit go.
+390,1539.0,1540.84, So now this is a lot shorter.
+391,1540.84,1541.3999999999999, Okay.
+392,1541.3999999999999,1544.76," As you can see, each point is no longer than 10 words long."
+393,1544.76,1551.32, And then I'm going to get a summary that is a bit longer and will give me a summary of the
+394,1551.32,1553.48, essay that I pasted in above.
+395,1554.6,1556.2, So great.
+396,1556.28,1562.2," Of course, you can do this on any essay or piece of text that you wish and you can set"
+397,1562.2,1565.8, your own clear and specific instructions as well.
+398,1567.0,1567.64, Okay.
+399,1567.64,1571.4, So I hope you can see why the second one is better.
+400,1571.4,1575.8, It's because I am not assuming the AI knows what kind of format I want the summarization
+401,1575.8,1577.4, of the essay to be in.
+402,1577.4,1582.92, I am being specific that I want very short notes on the essay and bullet point format
+403,1582.92,1584.76, with a short conclusion at the end.
+404,1585.32,1590.52," If I did not put this, the summary could have been just as long as the essay itself"
+405,1590.52,1593.4, and the prompt could be considered useless in my eyes.
+406,1594.28,1596.44," Next up, we can also adopt a persona."
+407,1597.08,1600.76," When writing prompts, it is sometimes helpful to create a persona."
+408,1600.76,1605.0, This means you are asking the AI to respond to you and a certain character.
+409,1605.0,1608.52," So exactly like the English language teacher example we saw earlier,"
+410,1608.52,1614.28," using a persona in prompt engineering can help ensure that the language model's output is relevant,"
+411,1614.36,1619.32," useful and consistent with the needs and preferences of the target audience,"
+412,1619.32,1624.76, making it a powerful tool for developing effective language models that meet the needs of users.
+413,1625.3999999999999,1628.92, Let's look at some examples of adopting a persona.
+414,1628.92,1632.04," So for example, you can have this prompt right here."
+415,1632.04,1637.72, Write a poem for a sister's high school graduation that would be read out to a family and close friends.
+416,1639.16,1643.72, So let's go ahead and run this and let's see what comes back.
+417,1644.52,1645.8799999999999, So there we go.
+418,1645.8799999999999,1649.72, It is quite good in a room full of kin and close ties.
+419,1649.72,1653.0," We gather to honor the mist in our eyes for a journey has ended,"
+420,1653.0,1655.96, another begun as our dear sister steps into the sun.
+421,1656.84,1658.76," Okay, so it's coming out with a poem."
+422,1658.76,1663.24," I can see here it is quite a good one, I guess,"
+423,1663.24,1665.6399999999999, probably better than anything that I would have written.
+424,1666.68,1670.28, And it is maybe a little bit generic.
+425,1670.28,1672.2, Maybe that's what you wanted.
+426,1672.2,1674.76, I think we can do better than this.
+427,1674.76,1675.8, So let's try this.
+428,1676.8400000000001,1680.1200000000001, This time I'm going to write a prompt with a persona.
+429,1680.1200000000001,1683.8, So this time I'm going to specify who I'm writing as.
+430,1683.8,1687.16, I'm going to do write a poem as Helena.
+431,1689.4,1697.16, Helena is 25 years old and an amazing writer.
+432,1697.16,1711.88, Her writing style is similar to famous 21st century poet Rupi Kaur.
+433,1712.76,1722.0400000000002," Writing as Helena, write a poem for her 18 year old sister"
+434,1723.0,1732.28, to celebrate her sister's high school graduation.
+435,1734.76,1745.1599999999999, This will be read out to friends and family at the gathering.
+436,1746.6,1748.52, Okay so let's check it out now.
+437,1748.52,1756.6," We're writing as Helena, she's 25, she's an amazing writer and we've also assigned a writing"
+438,1756.6,1764.76," style. So let's check it out. Now chat GPT should be using anything it knows about Rupi Kaur,"
+439,1764.76,1769.24, hopefully from the internet in order to apply that style to this poem.
+440,1770.6,1774.36, And as you can see this is maybe a little bit more affectionate.
+441,1774.36,1779.9599999999998," We've said sister, it's obviously a younger sister so the words little sister are being used"
+442,1779.9599999999998,1787.0, and in general I think this is a much higher quality poem and if Helena truly does have the
+443,1787.0,1795.32, style of Rupi Kaur in writing it will be almost indistinguishable who wrote this poem chat GPT
+444,1795.32,1801.24," or Helena. So here we go, here's the full thing. It starts off in the garden of our youth, I watch"
+445,1801.24,1808.68, you bloom from bud to blossom from child to woman 18 summers past again utilizing the fact that we
+446,1808.68,1816.1200000000001, fed it she was 18 and every winter's chill only made you stronger a force of nature still. So yes
+447,1816.1200000000001,1822.36, in my eyes this poem is a lot more better it's much more refined it's much more personal thanks to
+448,1822.36,1828.44, the prompts that we wrote. We've already had a brief look at specifying format when we limited
+449,1828.44,1835.64, the word count of our bullet points in a previous example. So that was a great example limiting words
+450,1835.64,1843.4, is one that I use often however we can do a bunch of other things including specifying if something
+451,1843.4,1850.6000000000001, is a summary a list or a detailed explanation. Heck you can even create checklists so I'm
+452,1850.6000000000001,1857.0, going to go ahead and show you how to do this here is an example prompt and I'm just going to run it
+453,1857.0,1866.52, and there we go we have created a checklist so many things you can do in chat gpt just make sure to
+454,1866.52,1874.92, specify the type of format you want and it should be able to do it. Okay great now that we looked at
+455,1874.92,1882.04, some best practices let's move on to some more advanced topics in the prompt engineering. In this
+456,1882.04,1887.1599999999999, section I'm going to talk about two types of prompting we can do zero shot prompting and
+457,1887.1599999999999,1893.08, few shot prompting zero shot prompting leverages a pre-trained model's understanding of words and
+458,1893.08,1898.92, concept relationships without further training and few shot prompting enhances the model with
+459,1898.92,1906.52, training examples via the prompt avoiding retraining so essentially in the context of the gpt4 model
+460,1906.52,1911.8799999999999, we don't really need to do much we are already using all of the data that it has in order to ask
+461,1912.2,1918.7600000000002, when is Christmas in America so let's go ahead and do some zero shot prompting when is
+462,1919.48,1930.2800000000002, Christmas in America and here go okay so it clearly already has the data for this we don't
+463,1930.2800000000002,1937.96, need to add any examples or anything like that so as you can see zero shot prompting refers to a
+464,1937.96,1945.0, way of querying models like gpt without any explicit training examples for the task at hand
+465,1945.72,1952.28, in the context of machine learning and not just gpt zero shot typically means that a model performs
+466,1952.28,1961.24, a task without having seen any examples of that task during its training okay great so now let's
+467,1961.32,1968.28, look at few shot prompting so once again with zero shot prompting we gave our language model a prompt
+468,1968.28,1975.72, and got a response but sometimes that's just not enough and we need a bit more training so let's use
+469,1975.72,1981.24, few shot prompting and level up our language model by showing a few examples of the task we
+470,1981.24,1990.04, wanted to perform so instead of zero examples we give it a tiny bit of data so let's think what would
+471,1990.04,1998.44, gpt for not know I guess it would not know my favorite types of food so for example let's check
+472,1998.44,2012.36, what is ania's favorite type of food plural okay and I mean it can guess but no it's just telling me
+473,2012.36,2019.8, that it doesn't know so that is absolutely fine let's stop generating so now let's feed it in
+474,2019.8,2028.6, some example data I'm going to feed it in a tiny bit of data ania's favorite type of food
+475,2030.28,2042.52, include sorry about my English let's go with burgers fries I love fries pizza and hit enter
+476,2043.16,2054.7599999999998, okay so we are essentially giving chat gpt some information so now if I type what restaurant
+477,2054.7599999999998,2069.32, should I take ania to in Dubai this weekend and hit here it should hopefully understand that my
+478,2069.32,2075.32, favorite types of foods are burgers fries and pizza and given that find me some restaurants in
+479,2075.32,2083.6400000000003, Dubai that I would like to go to so here are some this has been updated as of September 2021 but
+480,2083.6400000000003,2089.7200000000003, you know these are pretty good ones so I would totally go to these this is a great example of
+481,2089.7200000000003,2096.76, few shop prompting in which it wouldn't have been able to answer this question if I hadn't had given
+482,2097.2400000000002,2103.5600000000004, some example data or just trained the model a little bit more in order to get the response
+483,2103.5600000000004,2111.6400000000003, that I want great AI hallucinations now we're delving into something you probably never thought
+484,2111.6400000000003,2120.36, you'd hear in an AI context and that's hallucinations so what exactly are AI hallucinations and no
+485,2120.36,2125.32, they're not when your AI assistants start seeing unicorns and rainbows it's actually a
+486,2125.32,2131.56, tad that refers to the unusual outputs that AI models can produce when they misinterpret data
+487,2132.36,2138.44, a prime example of this is google's deep dream you know that project that turns pictures of your
+488,2138.44,2145.88, dog into a nightmarish blend of dog faces and well more dog faces deep dream is an experiment that
+489,2145.88,2152.1200000000003, visualizes the patterns learned by a neural network it is built to overinterpret and enhance the
+490,2152.12,2159.4, patterns it sees in an image or in other words fill in the gaps with images but some of the time
+491,2159.4,2166.44, those gaps can be filled with the wrong thing this is an example of an unusual output that AI models
+492,2166.44,2173.16, can produce when they misinterpret data now why do these hallucinations happen you ask
+493,2173.7999999999997,2179.72, they're trained on a huge amount of data and they make sense of new data based on what they've seen
+494,2179.72,2187.64, before sometimes however they make connections that are let's call it creative and voila an AI
+495,2187.64,2194.2, hallucination occurs despite their funny results AI hallucinations aren't just entertaining they're
+496,2194.2,2200.68, also quite enlightening they show us how our AI models interpret and understand data it's like
+497,2200.68,2206.6, a sneak peek into their thought processes this example is actually an AI image hallucination
+498,2206.6,2212.7599999999998, as I thought it would be a fun one to show AI hallucinations can also happen with text models
+499,2212.7599999999998,2218.2799999999997, an example of this is us asking a text model about a historical figure and the text model not having
+500,2218.2799999999997,2225.88, an answer and hallucinating one instead resulting in an inaccurate response vectors and text embeddings
+501,2226.52,2231.56, to finish off I'm going to leave you with a slightly more complex subject we're going to
+502,2231.56,2237.72, take a quick look at the topic of text embedding and vectors in computer science particularly in
+503,2237.72,2243.72, the realm of machine learning and natural language processing or nlp text embedding is a popular
+504,2243.72,2249.16, technique to represent textual information in a format that can be easily processed by algorithms
+505,2249.16,2254.52, especially deep learning models in the context of prompt engineering l l m embedding refers to
+506,2254.52,2260.2, representing prompts in a form that the model can understand and process this involves converting
+507,2260.2,2266.8399999999997, the text prompt into a high-dimensional vector that captures its semantic information so essentially
+508,2266.8399999999997,2274.7599999999998, the word food is represented by this if using the create embedding api from open ai okay so you will
+509,2274.7599999999998,2282.12, see it's represented the word was represented by an array of lots and lots of numbers but why do this
+510,2282.7599999999998,2289.24, well think about it this way if you ask a computer to come back with a similar word to food you wouldn't
+511,2289.24,2294.2799999999997, really expect it to come back with burger or pizza right that's what a human might do when
+512,2294.2799999999997,2299.9599999999996, thinking of similar words to food a computer would more likely look at the word lexical
+513,2299.9599999999996,2305.9599999999996, graphically kind of like when you scroll through a dictionary and come back with foot for example
+514,2306.6,2312.9199999999996, this is kind of useless to us we want to capture a word's semantic meaning so the meaning behind
+515,2312.92,2319.56, the word text embeddings do essentially that thanks to the data captured in this super long array
+516,2320.44,2327.8, now i can find words that are similar to food in a large corpus of text by comparing text embedding
+517,2327.8,2335.0, to text embedding and returning the most similar ones so words such as burger instead of foot will
+518,2335.0,2340.84, be more similar to create a text embedding of a word or even a whole sentence check out the
+519,2340.84,2349.4, create a bedding api here from open ai so here's the URL that you should visit and to create your
+520,2349.4,2356.84, own text embedding you're going to have to create a post request to this endpoint okay so that's
+521,2356.84,2363.88, what you can do you can also take the code from here so this is an example request written in
+522,2363.88,2373.56, node j s and you would have to install the open ai package take these two methods from it in order
+523,2373.56,2380.2000000000003, to pass through your open ai api key that i showed you how to get earlier as a refresher you should
+524,2380.2000000000003,2388.44, go here and view api keys to create your own api key and once you pass that through you can then
+525,2388.44,2395.8, use the configuration and pass it through here in order to use open ai and all of its
+526,2395.8,2402.76, wonderfulness including the create embedding method in which you pass through an object that
+527,2402.76,2409.4, object has to include the model and it also is going to include the input so in this case it is
+528,2409.4,2417.64, the text that you want to turn into an embedding so this is the code for doing that and here is the
+529,2417.64,2425.08, response which comes back as an object and then you would use dot notation to get the data go into
+530,2425.08,2431.3199999999997, the array in order to get the embedding so this is going to be the embedding that we saw earlier
+531,2431.3199999999997,2439.24, it's an array made up of numbers and a lot of these numbers okay so not just these three these this
+532,2439.24,2445.7999999999997, does spill out and this will be a very very long array of numbers that will give you this semantic
+533,2445.8,2453.8, meaning of whatever text you pass through okay so please have a go at playing around with this API
+534,2454.44,2459.6400000000003, in order to create your own text embeddings and compare them against other text embeddings in
+535,2459.6400000000003,2467.0800000000004, order to find similar text and that's it thank you so much for watching this course on prompt
+536,2467.0800000000004,2472.76, engineering in which we covered what it is we covered an introduction to AI as well as looked
+537,2472.76,2480.76, at linguistics language models prompt engineering mindset using GPT-4 had a look at best practices
+538,2480.76,2487.6400000000003, as well as zero shot and few shot prompting as well as AI hallucinations vectors or text embeddings
+539,2487.6400000000003,2495.48, and this recap right here so i hope you've enjoyed it and i'll see you again on the free co-cam channel

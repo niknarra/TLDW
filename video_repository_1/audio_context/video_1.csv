@@ -1,0 +1,225 @@
+,start,end,text
+0,0.0,2.8000000000000003, What's the first thing you should do when your code throws an error?
+1,2.8000000000000003,6.16," Obviously, you should change nothing and try to run it again a few times."
+2,6.16,8.88," If that doesn't work, you're gonna need a computer science degree."
+3,8.88,12.96, The awesome thing about software engineering is that you can learn to code and get a high-paying
+4,12.96,16.240000000000002, job while literally having no idea how anything actually works.
+5,16.240000000000002,20.16," It all just feels like magic, like a pilot driving a giant metal tube in the sky"
+6,20.16,21.92, while knowing nothing about aerodynamics.
+7,24.8,26.64, Welcome to Computer Science 101.
+8,26.64,30.0," In today's video, you'll learn the science behind the garbage code you've been writing"
+9,30.0,33.44, by learning 101 different computer science terms and concepts.
+10,33.44,34.56, This is a computer.
+11,34.56,37.2," It's just a piece of tape that holds ones and zeros,"
+12,37.2,39.52, along with a device that can read and write to it.
+13,39.52,42.72," It's called a Turing machine, and in theory, it can compute anything,"
+14,42.72,46.480000000000004, like the graphics in this video or the algorithm that recommended that you watch it.
+15,46.480000000000004,49.760000000000005," At the core of modern computers, we have the central processing unit."
+16,49.760000000000005,54.24," If we crack it open, we find a piece of silicon that contains billions of tiny transistors,"
+17,54.24,56.400000000000006, which are like microscopic on-off switches.
+18,56.4,58.72," The value at one of these switches is called a bit,"
+19,58.72,61.519999999999996, and is the smallest piece of information a computer can use.
+20,61.519999999999996,63.92," However, one bit by itself is not very useful,"
+21,63.92,66.08, so they come in a package of eight called a byte.
+22,66.08,69.28," One byte can represent 256 different values,"
+23,69.28,71.52, like all the characters that you type on your keyboard.
+24,71.52,73.28," In fact, when you type into your keyboard,"
+25,73.28,76.32, the character produced is actually mapped to a binary value
+26,76.32,79.2, in a character encoding like ASCII or UTF-8.
+27,79.2,81.36," Binary is just a system for counting,"
+28,81.36,84.56, like the base 10 system you normally use when counting on your fingers.
+29,84.56,87.28," But it only has two characters, one and zero."
+30,87.28,89.12," Humans have a hard time reading binary,"
+31,89.12,93.28," so most often it's represented in a hexadecimal base 16 format,"
+32,93.28,97.60000000000001, where 10 numbers and 6 letters can represent a 4-bit group called a nibble.
+33,97.60000000000001,100.24000000000001," As a developer, when you write code in a programming language,"
+34,100.24000000000001,102.48," it will eventually be converted into machine code,"
+35,102.48,106.48, which is a binary format that can be decoded and executed by the CPU.
+36,106.48,109.44," What it doesn't do, though, is store data for your applications."
+37,109.44,112.56," For that, computers have random access memory or RAM."
+38,112.56,115.84," It's like a neighborhood, and inside of every house lives a byte."
+39,115.84,120.0," Every location has a memory address, which the CPU can read and write to."
+40,120.0,122.96000000000001, You can think of the CPU and RAM as the brain of the computer.
+41,122.96000000000001,126.56," But in order for a computer to be useful, it needs to handle input and output."
+42,126.56,128.64000000000001," An input device might be the keyboard and mouse,"
+43,128.64000000000001,130.64000000000001, while an output device might be your monitor.
+44,130.64000000000001,134.08," Luckily, most developers don't need to worry about how this hardware fits together,"
+45,134.08,137.52," because we have operating system kernels, like Linux, Mac, and Windows,"
+46,137.52,140.64000000000001, that control all hardware resources via device drivers.
+47,140.64,144.64," Now, to start hacking on the operating system, your first entry point is the shell,"
+48,144.64,148.32, which is a program that exposes the operating system to the end user.
+49,148.32,150.55999999999997, It's called a shell because it wraps the kernel.
+50,150.55999999999997,153.6, It takes a line of text as input and produces an output.
+51,153.6,155.76, This is called a command line interface.
+52,155.76,159.35999999999999," Not only can it connect to your own computer, but with the secure shell protocol,"
+53,159.35999999999999,162.16, it can also connect to remote computers over a network.
+54,162.16,165.83999999999997," Now that you have access to the mainframe, it's time to pick a programming language,"
+55,165.83999999999997,170.07999999999998, which is a tool that uses the abstraction principle to make computers practical to work with
+56,171.04000000000002,173.44000000000003, By simplifying different systems layer by layer.
+57,173.44000000000003,175.76000000000002, Some languages like Python are interpreted.
+58,175.76000000000002,180.4, That means there's a program called an interpreter that will execute each line of code one by one.
+59,180.4,182.88000000000002, Other languages like C++ are compiled.
+60,182.88000000000002,187.36, They use a compiler to convert the entire program into machine code in advance
+61,187.36,189.36, before the CPU attempts to execute it.
+62,189.36,194.96, This results in an executable file that can be run by the operating system without any extra dependencies.
+63,194.96,198.48000000000002," Now, every programming language has a variety of built-in data types."
+64,198.48,200.88, To represent the data we're working with in our code.
+65,200.88,204.64," Instead of bytes, we work with more human-friendly things like characters and numbers."
+66,204.64,209.28," Now, the most fundamental way to use data in your application is to declare a variable."
+67,209.28,213.67999999999998," This attaches a name to a data point, allowing you to reuse it somewhere else in your code."
+68,213.67999999999998,218.23999999999998," Python is a dynamically typed language, which means we don't need to tell the program exactly"
+69,218.23999999999998,220.56, which data type is assigned to a variable.
+70,220.56,222.23999999999998, It just figures it out automatically.
+71,222.23999999999998,225.2," However, other languages like C are statically typed,"
+72,225.2,228.64, and that means you need to specify the data type of a variable in your code.
+73,228.64,232.64," When you define a variable, its value is stored somewhere in memory on the hardware,"
+74,232.64,235.92, and you may need to allocate and free up memory throughout the program.
+75,235.92,240.48," A pointer is a variable whose value is the memory address of another variable,"
+76,240.48,243.12, which can be used for low-level memory control.
+77,243.12,246.23999999999998," Many languages don't want to deal with low-level memory management,"
+78,246.23999999999998,251.2," and instead implement a garbage collector, which automatically allocates and deallocates memory"
+79,251.2,253.67999999999998, when an object is no longer referenced in the program.
+80,253.68,262.96," Now, the data types available are different in every programming language,"
+81,262.96,265.68," but typically you'll find int to represent whole numbers,"
+82,265.68,269.84000000000003, which may or may not be signed or unsigned to represent negative numbers as well.
+83,269.84000000000003,273.68," When numbers require a decimal point, they typically use the floating point type."
+84,273.68,277.36, It's called a float because there's only enough memory to represent a certain range
+85,277.36,281.36," of numbers at a certain precision, and is basically a form of scientific notation"
+86,281.44,282.8, to make computers faster.
+87,282.8,286.56," If you need more range or precision, many languages also have a double that doubles"
+88,286.56,288.24, the amount of memory used for the number.
+89,288.24,291.92," Now, when it comes to characters, you'll typically find the char data type to represent"
+90,291.92,296.64," a single character, or more commonly, a string to represent multiple characters together."
+91,296.64,299.6," Ultimately, these characters get stored in a memory address somewhere,"
+92,299.6,301.6, but they need to be stored in a certain order.
+93,301.6,305.2," When the order starts with the most significant byte in the smallest memory address,"
+94,305.2,309.68," it's called bigendian, or vice versa, if the least significant byte is stored in the smallest"
+95,309.68,311.44," address, it's called littleendian."
+96,311.44,315.36," When it comes to practical software engineering, one of the most fundamental things we do is"
+97,315.36,317.68, organize data into data structures.
+98,317.68,321.2," The most useful data structure is probably the array, or list."
+99,321.2,325.04," Just like a shopping list, it organizes multiple data points in order."
+100,325.04,328.96000000000004," However, it also maintains an index of integers that starts at zero,"
+101,328.96000000000004,331.36, and goes up for every new item in the list.
+102,331.36,335.12," That can be useful, but you don't actually need an index to create a list of items."
+103,335.12,339.84000000000003," Another option is a link list, where each item has a pointer to the next item in front of it."
+104,339.84000000000003,344.0, Another option is a stack that follows the last in first out principle.
+105,344.0,347.2," It's like stacking a set of plates, then when you want to access the data,"
+106,347.2,349.12, you pop the last one off the top.
+107,349.12,352.48," The inverse option is a queue, which is first in first out."
+108,352.48,356.48," Just like when you get into the bread line, the first person there is the first one to be fed."
+109,356.48,361.2," Now, another extremely useful data structure is the hash, which might also be called a map or"
+110,361.28,365.59999999999997," dictionary. It's like an array, but instead of an index of integers, you define the keys that"
+111,365.59999999999997,369.76," point to each individual item, giving you a collection of key value pairs."
+112,369.76,373.68," In many cases, though, it's not efficient to organize data in a linear way."
+113,373.68,378.0," To address that problem, we have trees, which organize nodes together in a hierarchy that"
+114,378.0,379.76, can often be traversed more quickly.
+115,379.76,383.76," This can sometimes be too rigid of a data structure, though, so instead, a graph can be"
+116,383.76,387.91999999999996, created to connect multiple nodes together in a virtually unlimited number of ways.
+117,387.92,392.48, A graph has a node for the data and an edge for the relationship between the data points.
+118,392.48,395.68," Data structures are essential, but they don't do anything by themselves."
+119,395.68,399.92," To do something useful, you'll need to code up an algorithm, which is just code that solves"
+120,399.92,400.48, a problem.
+121,400.48,403.6, I took the initiative in creating the internet.
+122,403.6,407.36," In our code, we have several mechanisms for implementing algorithms, the most fundamental"
+123,407.36,412.08000000000004," of which is a function, which is a block of code that takes an input, then does something,"
+124,412.08000000000004,413.36, and returns an output.
+125,413.36,417.52000000000004," Like a variable, a function has a name, and it can be called from other parts of your code"
+126,417.52,420.08, with different input parameters called arguments.
+127,420.08,423.52, One thing you might do in the function body is compare one value to another.
+128,423.52,428.71999999999997," Every language has a variety of built-in operators, like equality, greater than and less than,"
+129,428.71999999999997,430.79999999999995, that you can use to compare two values.
+130,430.79999999999995,435.44," If A is greater than B, then it forms a value of true, but if B is greater than A, then the"
+131,435.44,436.4, value is false.
+132,436.4,440.64," True false is what's known as a Boolean data type, and whenever your code produces a value"
+133,440.64,444.64," like this, it's known as an expression, but not all code will produce the value."
+134,444.64,448.0," Sometimes your code will simply do something, which is known as a statement."
+135,448.0,451.91999999999996," A good example is the if statement, which handles conditional logic."
+136,451.91999999999996,455.91999999999996," For example, if the condition is true, it will execute this code, otherwise it will"
+137,455.91999999999996,459.03999999999996, short-circuit and run the code inside of the else block.
+138,459.03999999999996,461.59999999999997, Another very common type of statement is a loop.
+139,461.59999999999997,465.68, A while loop will run this block of code over and over again until the condition in the
+140,465.68,467.2, parentheses becomes false.
+141,467.2,471.52," That can be useful, but more often than not, you'll want to loop over an iterable data type"
+142,471.52,472.4, like an array.
+143,472.4,476.71999999999997, Most languages have a for loop that can run some code for every object in the array or
+144,476.71999999999997,478.0, iterable data structure.
+145,478.0,482.56," Now, in some cases, a function may not have an output, which is generally called a void"
+146,482.56,483.12, function.
+147,483.12,486.15999999999997, An interesting thing about functions is that they can call themselves.
+148,486.15999999999997,489.91999999999996," When a function calls itself, it's called recursion, because when done like this, by"
+149,489.91999999999996,492.96," default, it will recurse forever, creating an infinite loop."
+150,492.96,496.64," That happens because when you call a function, the programming language will put it into"
+151,496.64,500.64," memory on what's known as the call stack, which is a short-term chunk of memory for"
+152,500.64,501.59999999999997, executing your code.
+153,501.6,504.96000000000004," When a function keeps calling itself, the language will keep pushing frames onto the"
+154,504.96000000000004,507.76000000000005, call stack until you get a stack overflow error.
+155,507.76000000000005,511.44," To avoid this, your algorithm needs a base condition, so it knows when to terminate"
+156,511.44,511.92, the loop.
+157,511.92,515.36," Now, when you write an algorithm, you'll need to determine if it's any good, and the system"
+158,515.36,517.76, for doing that is called bigot notation.
+159,517.76,521.6, It's a standard format for approximating the performance of an algorithm at scale.
+160,521.6,525.6," It may reference time complexity, which is how fast your algorithm will run, and space"
+161,525.6,529.44," complexity, which deals with how much memory is required to run it."
+162,529.6,536.0," The most crude option is brute force, where you might loop over every possible combination"
+163,536.0,537.7600000000001, to hack somebody's credit card pin.
+164,537.7600000000001,541.7600000000001," A more sophisticated approach might be divide and conquer, like binary search, where you"
+165,541.7600000000001,545.2, cut the problem in half multiple times until you find what you're looking for.
+166,545.2,550.4000000000001," Another option is dynamic programming algorithms, where a problem is broken down into multiple"
+167,550.4000000000001,555.12," smaller subproblems, and the result of each computation is stored for later use, using"
+168,555.12,556.96, a technique called memoization.
+169,556.96,560.72," That means if a function has already been called, it will use the existing value instead"
+170,560.72,562.5600000000001, of recomputing it again from scratch.
+171,562.5600000000001,566.08, Then we have greedy algorithms that will make the choice that is most beneficial in the
+172,566.08,568.5600000000001," short term, without considering the problem as a whole."
+173,568.5600000000001,571.6, One example of this is Dijkstra's shortest path algorithm.
+174,571.6,576.4000000000001," On the flip side, we have backtracking algorithms, which take a more incremental approach by looking"
+175,576.4000000000001,581.12," at all of the possible options, like a rat in a maze exploring all the different potential paths."
+176,581.12,584.8000000000001," Now when it comes to implementing your code, there are always multiple ways to get the job"
+177,584.8000000000001,585.2, done.
+178,585.2,589.44," One programming paradigm is declarative, where your code describes what the program does"
+179,589.44,592.4000000000001," and the outcome, but doesn't care about things like control flow."
+180,592.4000000000001,596.48, This style of programming is often associated with functional languages like Haskell.
+181,596.48,600.88," The other paradigm is imperative programming, where your code uses statements, like if and"
+182,600.88,604.6400000000001," while, providing explicit instructions about how to produce an outcome."
+183,604.6400000000001,607.2, It's associated with procedural languages like C.
+184,607.2,611.9200000000001," Today, most general purpose languages like Python, JavaScript, Kotlin, Swift, and so on,"
+185,611.92,616.4," are multi-paradigm, which means they support all these options at the same time, in addition to"
+186,616.4,617.92, object-oriented programming.
+187,617.92,623.28, The idea behind OOP is that you use classes to write a blueprint for the data or objects in your
+188,623.28,628.24," code. A class can encapsulate variables, which are commonly called properties, as well as functions,"
+189,628.24,630.56, which are usually called methods in this context.
+190,630.56,634.88," It's a common way to organize and reuse code, because classes can share behaviors between"
+191,634.88,639.5999999999999," each other through inheritance, where a subclass can extend and override the behaviors of the"
+192,639.6,643.84," parent class, and it opens the door to all kinds of other ideas called design patterns."
+193,643.84,648.32," Now, a class by itself doesn't actually do anything. Instead, it's used to instantiate"
+194,648.32,652.8000000000001," objects, which are actual chunks of data that live in your computer's memory. Often, you'll want"
+195,652.8000000000001,657.36," to reference the same object over and over again in your code. When data is long-lived, it can't"
+196,657.36,661.6," go in the call stack. Instead, most languages have a separate area of memory called the heap,"
+197,661.6,665.9200000000001," which, unlike the call stack, can grow and shrink based on how your application is used."
+198,665.92,670.64," It also allows you to pass objects by reference, which means you can use the same object in multiple"
+199,670.64,674.64," variables without increasing the memory footprint, because it always points to the same chunk of"
+200,674.64,678.56," memory in the heap. Now, what's interesting is that if we go back to the CPU that we talked"
+201,678.56,682.7199999999999," about in the beginning, you'll notice that it contains multiple threads. A thread takes the"
+202,682.7199999999999,687.8399999999999, physical CPU core and breaks it into virtual cores that allow it to run code simultaneously.
+203,687.8399999999999,692.0," There are some programming languages that support parallelism, where you can write code that literally"
+204,692.0,696.56," executes on two different threads at the same time. However, many languages out there are only"
+205,696.56,700.56," single threaded, but that doesn't mean they can't do two things at the same time. Instead,"
+206,700.56,705.52," they implement concurrency models, like an event loop or coroutines, that can pause or delay the"
+207,705.52,709.92," normal execution of code to handle multiple jobs on a single thread at the same time. Now,"
+208,709.92,714.64," in modern computing, we're rarely working with the bare metal CPU and RAM. Instead, we work in"
+209,714.64,719.44," the cloud with a virtual machine, which is just a piece of software that simulates hardware. That"
+210,719.44,724.24, allows us to take really big computers and split them up into a bunch of smaller virtual computers.
+211,724.24,728.24, These machines are the backbone of the internet and are connected via the internet protocol. Each
+212,728.24,733.9200000000001, machine has a unique IP address to identify it on the network. That IP address is usually alias to
+213,733.9200000000001,738.96, a URL that is registered in a global database called the domain name service. Now to establish a
+214,738.96,744.5600000000001," connection, the two computers will perform a TCP handshake, which will allow them to exchange messages"
+215,745.52,750.64," On top of that, there's usually a security layer like SSL to encrypt and decrypt the messages"
+216,750.64,755.1199999999999, over the network. Now the two computers can securely share data with the hypertext transfer
+217,755.1199999999999,760.0," protocol. The client may request a web page, then the server will respond with some HTML."
+218,760.0,764.4799999999999," Modern servers provide a standardized way for a client to request data, which is called an"
+219,764.4799999999999,770.0799999999999," application programming interface or API. The most common architecture is REST, where URLs are mapped"
+220,770.08,774.64," to different data entities available on the server. And that brings us to our final topic,"
+221,774.64,778.32," motherf and printers. You're going to need to learn how these things work inside and out,"
+222,778.32,782.08," because every time you go to grandma's house, she's going to ask you to fix it, which shouldn't be a"
+223,782.08,787.2800000000001, problem for a computer scientist like you. Thanks for watching and I will see you in the next one.

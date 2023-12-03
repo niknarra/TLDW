@@ -30,7 +30,7 @@ from streamlit_chat import message
 #import PyPDF2
 import csv
 # Load CSV data
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 

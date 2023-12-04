@@ -30,7 +30,7 @@ from streamlit_chat import message
 #import PyPDF2
 import csv
 # Load CSV data
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+os.environ["OPENAI_API_KEY"] = "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"
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 
@@ -120,7 +120,7 @@ def display_main_page():
     #col.image(str(row['thumbnail']), use_column_width=True, caption=row['video_name'])
     for index, row in filtered_videos.iterrows():
         col = cols[index % 2]
-        col.image(str(row['thumbnail']), use_column_width=True, caption=row['video_name'])
+        col.image(str(row['thumbnail']), use_column_width=True,width=600, caption=row['video_name'])
         if col.button('Select', key=row['id']):
             st.session_state.selected_video = row
             st.session_state.page = 'video'
@@ -168,6 +168,8 @@ def display_video_page():
         st.session_state['messages'] = []
         st.session_state['timestamps'] = []
         st.experimental_rerun()
+    st.sidebar.write("\n")
+    st.sidebar.write("\n")
     video = st.session_state.selected_video
     user_id = st.session_state['user_id']
     if (st.session_state.page != 'main'):
@@ -199,22 +201,30 @@ def display_video_page():
             # Dropdown to select a keyword
             #print(video['key_words'])
             keyword_dict = ast.literal_eval(str(video['key_words']))
-            selected_keyword = st.sidebar.selectbox("Select your prompt based on the keyword:", options=list(keyword_dict.keys()))
-        
+            selected_keyword = st.sidebar.selectbox("Let's Focus: Select a keyword:", options=list(keyword_dict.keys()))
+            st.sidebar.write("Wondering what to ask? Try these:")
             # Display the sentences associated with the selected keyword
             if selected_keyword:
                 for sentence in keyword_dict[selected_keyword]:
                     st.sidebar.code(sentence, language="python")
     with col2:
-        def clear_chat_history(csv_file_name):
-            print("clear chat")
+        def clear_chat_history():
+            #print("clear chat")
             #st.session_state.page = 'main'
-            st.session_state['generated'] = []
-            st.session_state['past'] = []
-            st.session_state['messages'] = []
-            st.session_state['timestamps'] = []
-            f = open(csv_file_name, "w+")
-            f.close()
+            video_id = st.session_state.selected_video['id'] if 'selected_video' in st.session_state else None
+            user_id = st.session_state['user_id']
+            
+            if video_id is not None and user_id is not None:
+        # Call the function to clear chat history from the database
+                chat_db.clear_chat_history(video_id, user_id)
+            
+                st.session_state['generated'] = []
+                st.session_state['past'] = []
+                st.session_state['messages'] = []
+                st.session_state['timestamps'] = []
+                
+            #f = open(csv_file_name, "w+")
+            #f.close()
             #st.experimental_rerun()
         def click_button(timestep):
             st.session_state.button = int(timestep)
@@ -234,7 +244,7 @@ def display_video_page():
                     index = i * cols + j
                     if index < len(numbers):
                         # Create a button with the number
-                        cols_list[j].button(str(int(numbers[index])), on_click=click_button, args=(int(numbers[index]),))
+                        cols_list[j].button(str(convert_seconds_to_hms(int(numbers[index]))), on_click=click_button, args=(int(numbers[index]),))
                     else:
                         # Create an empty space
                         cols_list[j].empty()
@@ -247,20 +257,22 @@ def display_video_page():
         # try asnwering the questions as much as possible \n\n  now, please asnwer this question if prossible provide video timestamps from where this content/asnwer is refered from 
         # (the timestamps in the context is in seconds format but to convert that format and provide the video timestamps in hours:minutes:seconds format) always cite your asnwer to a video timestamp whenever possible even when it is not asked in the question, please asnwer the question intutively and never say "based on the context", "as per the provided context", "unfortunately, i connot asnwer the question", "i can not answer the question based on the provided audio/video trasncripts" or other similar terms while asnwering the questions aslways try to provide some kind of answer \n QUESTION : """
         # but remember whenever you are mentioning a video timestamp in your asnwer always place them in between ** (i.e. if the video timestamp is 150 seconds place the 150 inyour answer as *150*).
-        condition_text_1 = """Assume you are an answer writing expert bot. 
+        profile = st.session_state['profile']
+        condition_text_1 = """Assume you are an answer writing expert bot. Also, the user who is asking questions related to the video is a """ + str(profile)+ """ 
         Your task is to go through the above time-stamped video and audio context of the video. Extract relevant information from it, 
         and answer the questions that will follow. PLease try to correlate between the above provided audio and video context 
         while answering the questions. If the question is not relevant to the context provided, 
-        try to generalize your answer relevant to the above provided video and audio context or try to asnwer th question from your general knowledge, 
-        please dont say: "based on the context", "as per the provided context", "unfortunately, i connot asnwer the question", "i can not answer the question based on the provided audio/video trasncripts" while asnwering the questions, 
-        try asnwering the questions as much as possible \n\n  now, please asnwer this question if prossible provide video timestamps from where this content/asnwer is refered from 
+        try to generalize your answer relevant to the above provided video and audio context or try to asnwer the question from your general knowledge, 
+        please dont say: "based on the context", "as per the provided context", "unfortunately, i cannot asnwer the question", "i can not answer the question based on the provided audio/video trasncripts" while asnwering the questions, 
+        try asnwering the questions as much as possible \n\n  now, please asnwer this question if prossible provide video timestamps (in seconds interger format, i.e. 150 seconds, 235 seconds, remember to only give video timestamps in integer format not float/decimal format) from where this content/asnwer is refered from 
         (the timestamps in the context is in seconds and you provide the asnwer in seconds format only) if relevant cite your asnwer to a video timestamp whenever possible even when it is not explicitly asked in the question,  
-        please asnwer the question intutively and never say "based on the context", "as per the provided context", "unfortunately, i connot asnwer the question", "i can not answer the question based on the provided audio/video trasncripts" or other similar terms while asnwering the questions aslways try to provide some kind of answer. please remember the timestamps you refer in the answer should only be in seconds format (i.e. 153.0 seconds etc.) \n QUESTION : """
+        please asnwer the question intutively and never say "based on the context", "as per the provided context", "unfortunately, i connot asnwer the question", "i can not answer the question based on the provided audio/video trasncripts" or other similar terms while asnwering the questions aslways try to provide some kind of answer. please remember the timestamps you refer in the answer should only be in seconds integer format (i.e. 153 seconds etc.) \n QUESTION : """
         
-        condition_text_2 = "please read the following text genrated by you, and extract the video timestamps mentioned in it, the extracted timestamps should only be in integer/float format (for example: 150.2, 67, 45 etc.), once you extract the video timestamps, give the resulting list of timestamps in a list format seperated by commas. only provide the list of timestamps (the timestamps in the list should be seperated by comma','), if no timestamps are found in the provided text, please return 'None'. TEXT:  "
+        condition_text_2 = "please read the following text genrated by you, and extract the video timestamps mentioned in it, the extracted timestamps should only be in integer/float format (for example: 150, 67, 45.0 etc.), once you extract the video timestamps, give the resulting list of timestamps in a list format seperated by commas. only provide the list of timestamps (the timestamps in the list should be seperated by comma','), if no timestamps are found in the provided text, please return 'None'. TEXT:  "
         user_id = st.session_state['user_id']
-        st.write("**Interact with the video here**")
-        st.sidebar.button("clear chat history", on_click=clear_chat_history, args=(video['chat_history'],))
+        st.write("**Start chatting**")
+        #if st.sidebar.button("Clear Chat History"):
+            #clear_chat_history()
         # You can add chat functionality here.
         # As an example, let's create a simple chat box.
         response_container = st.container()
@@ -275,7 +287,7 @@ def display_video_page():
         with container:
             #move_focus()
             with st.form(key='my_form', clear_on_submit=True):
-                user_input = st.text_area("Input your prompt here:", key='input', height=100)
+                user_input = st.text_area("Your questions here", key='input', height=100)
                 submit_button = st.form_submit_button(label='Send')
                 st.session_state['messages'].append({"role": "user", "content": user_input})
             
@@ -293,7 +305,7 @@ def display_video_page():
                     temp_timestamps_int = set(temp_timestamps_int)
                     temp_timestamps_int = list(temp_timestamps_int)
                     st.session_state['timestamps'].append(temp_timestamps_int)
-                    print(st.session_state['timestamps'])
+                    #print(st.session_state['timestamps'])
                 except:
                     st.session_state['timestamps'].append([])
                 

@@ -52,7 +52,11 @@ if st.session_state['username']:
     #st.sidebar.write(f"Hello, {st.session_state['user_id']}!")
     #st.sidebar.write(f"Hello, You are a {st.session_state['profile']}!")
     tldwchat2.controller()
-    
+    st.sidebar.write("\n")
+    st.sidebar.write("\n")
+    st.sidebar.write("\n")
+    st.sidebar.write("\n")
+    st.sidebar.write("\n")
     if st.sidebar.button("Logout"):
         logout()
         st.experimental_rerun()
@@ -64,9 +68,7 @@ else:
         st.title(selected_greeting)
     st.write("\n")
     st.write("\n")
-    st.write("\n")
-    st.write("\n")
-    st.write("\n")
+
     st.write("\n")
     st.title(selected_description)
     st.write("\n")
@@ -75,9 +77,7 @@ else:
     st.write("\n")
     st.write("\n")
     st.write("\n")
-    st.write("\n")
-    st.write("\n")
-    st.write("\n")
+    
     st.title("You can ask TL;DW anything,")
     colT3,colT4 = st.columns([0.3,8])
     with colT4:
@@ -112,7 +112,7 @@ else:
         new_email = st.text_input("Email", key='signup_email')
         new_profile = st.selectbox(
             "What describes you best?",
-            ("Student", "Teacher", "Working Professional", "Researcher", "Educator", "Content Creator", "Other"),
+            ("Student", "Teacher", "Working Professional", "Researcher", "Educator", "Content Creator"),
             key='signup_profile'
         )
         if st.button("Register", key='signup_button'):
@@ -129,4 +129,3 @@ else:
 #st.write("Welcome to TL;DW")  # Default welcome message
 
 # Check if user is logged in
-

@@ -21,7 +21,7 @@ image_path = 'TLDW logo.png'
 
 greetings = ["Hello", "Bonjour", "Hola", "Hallo", "Ciao", "こんにちは", "안녕하세요", "Привет", "Olá", "नमस्ते", "你好", "مرحبا", "నమస్కారం"]
 
-descriptions = ["Long videos? Ain't nobody got time for that! Welcome to your new sanctuary, TL;DW, where we cut to the chase faster than a ninja on a sugar rush.", "Say goodbye to the endless video scroll! At TL;DW, we believe life's too short for long videos. Dive in for the short, sweet, and super!"]
+descriptions = ["Long videos? Ain't nobody got time for that! Welcome to your new sanctuary, TL;DW, where we cut to the chase faster than a ninja on a sugar rush.", "No more aimless seeking. With TL;DW, you watch what matters to you.", "Say goodbye to the endless video scroll! At TL;DW, we believe life's too short for long videos. Dive in for the short, sweet, and super!"]
 
 questions = ["Who is the speaker or presenter in the video?", "Are there key dates or events mentioned in the video?", "What is the point of this video?",  "Are there any notable quotes or statements in the video?", "What are the underlying themes or messages in the video?"]
 

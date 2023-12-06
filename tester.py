@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="TLDW", page_icon=":zap:", layout="wide")
 
-import tldwchat2
+import tldwchat3
 import db2 as db
 import streamlit_authenticator as stauth
 import random
@@ -11,17 +11,19 @@ hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
+            footer:after{content:'Application designed by: Nikhil Narra, Premith Kumar Chilukuri & Siddharth Chintamaneni';
+            visibility:visible;}
             </style>
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-image_path = 'TLDW logo.png'
+image_path = 'tldw_logo.png'
 
 #st.set_page_config(page_title="TLDW", page_icon=":zap:", layout="wide")
 
-greetings = ["Hello", "Bonjour", "Hola", "Hallo", "Ciao", "こんにちは", "안녕하세요", "Привет", "Olá", "नमस्ते", "你好", "مرحبا", "నమస్కారం"]
+greetings = ["Hello", "Bonjour", "Hola", "Hallo", "Ciao", "こんにちは", "안녕하세요", "Привет", "Olá", "नमस्ते", "你好", "నమస్కారం"]
 
-descriptions = ["Long videos? Ain't nobody got time for that! Welcome to your new sanctuary, TL;DW, where we cut to the chase faster than a ninja on a sugar rush.", "No more aimless seeking. With TL;DW, you watch what matters to you.", "Say goodbye to the endless video scroll! At TL;DW, we believe life's too short for long videos. Dive in for the short, sweet, and super!"]
+descriptions = ["No more aimless seeking. With TL;DW, you watch what matters to you.", "Say goodbye to the endless video scroll! At TL;DW, we believe life's too short for long videos. Dive in for the short, sweet, and super!","Long videos? Ain't nobody got time for that! Welcome to your new sanctuary, TL;DW, where we cut to the chase faster than a ninja on a sugar rush.", "Say goodbye to the endless video scroll! At TL;DW, we believe life's too short for long videos. Dive in for the short, sweet, and super!"]
 
 questions = ["Who is the speaker or presenter in the video?", "Are there key dates or events mentioned in the video?", "What is the point of this video?",  "Are there any notable quotes or statements in the video?", "What are the underlying themes or messages in the video?"]
 
@@ -48,10 +50,12 @@ def logout():
 
 if st.session_state['username']:
     st.sidebar.image(image_path, width=125)
+    st.sidebar.title("Too Long;Didn't Watch")
+    st.sidebar.write("\n")
     st.sidebar.write(f"Hello, {st.session_state['full_name']}!")
     #st.sidebar.write(f"Hello, {st.session_state['user_id']}!")
     #st.sidebar.write(f"Hello, You are a {st.session_state['profile']}!")
-    tldwchat2.controller()
+    tldwchat3.controller()
     st.sidebar.write("\n")
     st.sidebar.write("\n")
     st.sidebar.write("\n")
@@ -68,7 +72,8 @@ else:
         st.title(selected_greeting)
     st.write("\n")
     st.write("\n")
-
+    st.write("\n")
+    st.title("Welcome to Too Long;Didn't Watch where our motto is,")
     st.write("\n")
     st.title(selected_description)
     st.write("\n")
@@ -84,7 +89,7 @@ else:
         st.subheader(selected_question)
         
     with st.sidebar:
-        st.image(image_path, width=125)
+        st.image(image_path, width=150)
         st.write("Login")
         username = st.text_input("Username", key='login_username', placeholder="Enter your username")
         password = st.text_input("Password", type="password", key='login_password', placeholder="Password here")
@@ -129,3 +134,4 @@ else:
 #st.write("Welcome to TL;DW")  # Default welcome message
 
 # Check if user is logged in
+

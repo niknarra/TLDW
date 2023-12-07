@@ -9,13 +9,23 @@ Through the application's interactive user interface, users can engage with the 
 The core AI techniques powering the video summarization and question answering capabilities are video-frame captioning, audio transcription, and key-frame extraction. By leveraging state-of-the-art large language models, the system can effectively analyze long temporal context from the video and generate abstractive summaries and meaningful insights. This allows for an interactive conversation with the video content rather than passive watching.
 The proposed TL;DW application enables generating concise summaries by extracting key frames, captioning them, and transcribing audio to build a rich contextual database for each video. This context is processed by the large language model to produce succinct summarizations. The conversational interface allows users to efficiently interact with the video content by asking questions and accessing insights from the video context, without needing to watch the full video.
 ![Alt text](https://github.com/niknarra/TLDW/blob/main/TLDW%20pipeline.png)
-[Project Live Demo](https://tldwapp.streamlit.app/)
+[Project Live Demo](https://tldwapp2.streamlit.app/)
 
 ## Running the code in your local environment:
 #### Dependency Installation
 * Make sure you have Python > 3.9
 * Install the dependecies using ``` pip install -r requirements.txt ```
-* Once the dependecies are insstalled, run ```streamlit run .\complete_TLDW_demo_V1.py```
+* Once the dependecies are insstalled, run ```streamlit run .\complete_TLDW_demo_V10.py```
+* The full end-end application is present at [TLDW 2.0](https://tldwapp2.streamlit.app/), the above, ```streamlit run .\complete_TLDW_demo_V10.py``` code is just a reference for other users to build further extensions.
+
+## Application Workflow
+* visit [TLDW 2.0](https://tldwapp2.streamlit.app/)
+* sign up if you are a new user
+* once signed up, please login into the application, if wrong password is entered please rfresh the page
+* once logged into the application, a video repository page greets you, please select a video which you like
+* now in the next page, you can a see a brief summary of the video, chat window, and 3 keywords with corresposing prompts.
+* these keyowrds and prmpts act as a guidance for you to ask questions, you can ask other questions as well
+* in the chat window, ask any question, our applcation responds with an answer, and along with the asnwer you will be provided with a list of timestamps related to the asnwer, click on them to automatically watch the specific parts of the video.  
 
 #### The following is the description of the main python code ```complete_TLDW_demo_V1.py```
 1. `streamlit`: This is the main framework used for building the web app. It provides functions to create interactive widgets and to manage the app's state.
@@ -95,6 +105,7 @@ DEFINE function display_video_page()
         LOAD chat history from CSV
         GENERATE response using conversational retrieval chain
         APPEND messages to session state
+        SHOW video timestamps in the asnwer
         WRITE new chat history to CSV
 
 IF selected page in session state is 'main'

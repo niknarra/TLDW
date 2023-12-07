@@ -10,6 +10,7 @@ The core AI techniques powering the video summarization and question answering c
 The proposed TL;DW application enables generating concise summaries by extracting key frames, captioning them, and transcribing audio to build a rich contextual database for each video. This context is processed by the large language model to produce succinct summarizations. The conversational interface allows users to efficiently interact with the video content by asking questions and accessing insights from the video context, without needing to watch the full video.
 ![Alt text](https://github.com/niknarra/TLDW/blob/main/TLDW%20pipeline.png)
 [Project Live Demo](https://tldwapp2.streamlit.app/)
+[Project Demo on Youtuve] (https://www.youtube.com/watch?v=AZgzeEoIaEM)
 
 ## Running the code in your local environment:
 #### Dependency Installation

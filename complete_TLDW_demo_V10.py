@@ -47,7 +47,7 @@ from streamlit_chat import message
 import csv
 # Load CSV data
 st.set_page_config(layout="wide")
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "" # insert your openAI key here
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 
